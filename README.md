@@ -42,7 +42,7 @@ ollama run qwen2.5:1.5b
 streamlit run app.py
 
 coder-buddy/
-├── app.py                # Main Streamlit app
+├── agent.py                # Main Streamlit app
 ├── requirements.txt      # Dependencies
 └── README.md             # You're here!
 
