@@ -22,10 +22,10 @@ if prompt := st.chat_input("Write your thoughts !!"):
         st.markdown(prompt)
 
     with st.chat_message('assistant'):
-        # Set up the API request to Ollama
+        
         ollama_url = "http://localhost:11434/api/chat"
         
-        # Create payload for the request
+      
         payload = {
             "model": "qwen2.5:1.5b",
             "messages": [
@@ -38,10 +38,10 @@ if prompt := st.chat_input("Write your thoughts !!"):
             "stream": True
         }
         
-        # Stream the response
+        
         response = requests.post(ollama_url, json=payload, stream=True)
         
-        # Process the streaming response
+       
         complete_response = ""
         placeholder = st.empty()
         for chunk in response.iter_lines():
@@ -58,7 +58,7 @@ if prompt := st.chat_input("Write your thoughts !!"):
 
 
 
-# More customized footer (optional)
+
 st.markdown("---")
 st.markdown(
     """
