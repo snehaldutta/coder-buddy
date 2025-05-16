@@ -19,34 +19,70 @@
 - [Streamlit](https://streamlit.io/)
 - [Ollama](https://ollama.com/)
 - [Qwen2.5:1.5B model](https://huggingface.co/Qwen)
-- Python 3.10+
+- [Python 3.10+]()
+- [React 19]()
+- [Vite]()
 
 ---
 
 ## 📦 Installation
+
+### Using your local machine
 
 1. **Clone the repository:**
 
 ```bash
 git clone https://github.com/your-username/coder-buddy.git
 cd coder-buddy
+```
 
-python -m venv env
-source env/bin/activate  # On Windows use `env\\Scripts\\activate`
+2. **Create virtual environment:**
 
-pip install -r requirements.txt
+```bash
+# (we assume you already have python 3.10+ installed)
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requeriments.txt
+```
 
+```bash
+# this is for the node project
+cd ./apps/web
+npm install
+```
+
+3. **Running the project:**
+
+```bash
 ollama pull qwen2.5:1.5b
 ollama run qwen2.5:1.5b
 
-streamlit run app.py
+cd ./apps/web; npm run dev
 
-coder-buddy/
-├── agent.py                # Main Streamlit app
-├── requirements.txt      # Dependencies
-└── README.md             # You're here!
+streamlit run agent.py
+```
+
+### Using Firebase Studio
+
+## 📂 Project structure
 
 ```
+📦 coder-buddy/
+├── 📄 agent.py                 # Main Streamlit app
+├── 📂 packages                 # Components & extra stuff
+│   └── 📄 components.py
+│   └── ...
+├── 📂 web                      # React web server that servers the custom components
+│   └── 📄 index.html
+│   └── 📄 package.json
+│   └── 📄 vite.config.ts
+│   └── ...
+├── 📄 requirements.in          # Your project dependencies
+├── 📄 requirements.txt         # Dependencies three
+└── 📄 README.md                # You're here!
+```
+
+
 [Demo](https://youtu.be/omMegjMm7bw): Demo Video of the project .....
 
 Connect with me over [LinkedIn](www.linkedin.com/in/snehal-python)
