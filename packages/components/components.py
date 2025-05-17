@@ -1,6 +1,6 @@
 import streamlit.components.v1 as component
 import streamlit as st
-from typing import Literal
+from typing import Literal, Any
 
 
 BASE_URL = "https://3001-firebase-coder-buddy-1746985578257.cluster-qhrn7lb3szcfcud6uanedbkjnm.cloudworkstations.dev"
@@ -9,23 +9,15 @@ BASE_URL = "https://3001-firebase-coder-buddy-1746985578257.cluster-qhrn7lb3szcf
 def _Write(text: str):
     st.write(text)
 
+def _ChatMessage(role: Literal["user", "assistant"], message: str, key: Any = 1):
+    if role == "user":
+        _MessagePlaceholder(key=f"message-placeholder-{key}", message=message)
+    else:
+        st.markdown(message)
+
 class _SessionStateProxy():
     session_state = {}
     messages = []
-
-class _ChatMessage(object):
-    def __init__(self, role: Literal["user", "assistant"]):
-        self.role = role
-
-    def __enter__(self):
-        return self
-
-    def __exit__(self, exc_type, exc_value, traceback):
-        pass
-
-    def write(self, text):
-        self.m = text
-        print(self.m)
 
 
 def _Unstyled():
@@ -41,6 +33,11 @@ def _Unstyled():
 _HeaderComponent = component.declare_component(
     "header_component",
     url=f"{BASE_URL}/c/header"
+)
+
+_MessagePlaceholder = component.declare_component(
+    "message_placeholder_component",
+    url=f"{BASE_URL}/c/message"
 )
 
 _ChatInputComponent = component.declare_component(

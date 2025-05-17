@@ -22,6 +22,7 @@
       "vscodevim.vim"
       "ms-python.debugpy"
       "ms-python.python"
+      "esbenp.prettier-vscode"
     ];
 
     # Enable previews

@@ -51,10 +51,10 @@ function ChatInputComponent({
       <strong
         className={css({
           color: "#fff",
-          fontFamily: ["Gabarito", "sans-serif"],
-          fontSize: 32,
+          fontFamily: "Gabarito, sans-serif",
+          fontSize: 22,
           fontWeight: 600,
-          marginBottom: 16,
+          marginBottom: 6,
           marginLeft: 6,
         })}
       >
@@ -94,7 +94,7 @@ function ChatInputComponent({
             height: "100%",
             flex: 1,
             color: "#fff",
-            fontFamily: ["Inter", "sans-serif"],
+            fontFamily: "Inter, sans-serif",
             paddingTop: 14,
             fontSize: 16,
             fontWeight: 400,
@@ -127,7 +127,7 @@ function ChatInputComponent({
             <em
               className={css({
                 color: "#D9D9D9",
-                fontFamily: ["Inter", "sans-serif"],
+                fontFamily: "Inter, sans-serif",
                 fontSize: 14,
                 fontStyle: "normal",
                 fontWeight: 500,
@@ -165,7 +165,7 @@ function ChatInputComponent({
       <i
         className={css({
           color: "#76787c",
-          fontFamily: ["Gabarito", "sans-serif"],
+          fontFamily: "Gabarito, sans-serif",
           fontSize: 12,
           fontWeight: 400,
           marginTop: 6,

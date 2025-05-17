@@ -19,7 +19,7 @@ function HeaderComponent({
   const { name: _name } = args
 
   useEffect(() => {
-    Streamlit.setFrameHeight(100)
+    Streamlit.setFrameHeight(36)
   }, [theme])
 
   return (
@@ -51,7 +51,7 @@ function HeaderComponent({
             fontSize: 22,
             color: "#fff",
             fontWeight: 600,
-            fontFamily: ["Gargarito", "sans-serif"],
+            fontFamily: "Gargarito, sans-serif",
           })}
         >
           Coder-Buddy
