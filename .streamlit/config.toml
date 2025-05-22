@@ -14,3 +14,7 @@ hideTopBar = true
 showErrorDetails = "full"
 toolbarMode = "minimal"
 showSidebarNavigation = false
+
+[theme]
+font = "Inter, sans-serif"
+base = "dark"

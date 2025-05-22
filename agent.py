@@ -48,7 +48,9 @@ c.header()
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-chat_placeholder = st.container()
+chat_placeholder = st.container(height=685, border=False)
+#                                      ^ calc(100vh - 315px)
+#                                      better approach but I dunno how to do it using streamlit
 
 if prompt := c.chat_input(placeholder="Write your thoughts !!"):
     handle_user_prompt(prompt=prompt)
@@ -58,7 +60,3 @@ if prompt := c.chat_input(placeholder="Write your thoughts !!"):
             c.chat_message(key=i, role=message['role'], message=message['content'])
 
     handle_assistant_response()
-
-with chat_placeholder:
-    for i, message in enumerate(st.session_state.messages):
-        c.chat_message(key=i, role=message['role'], message=message['content'])

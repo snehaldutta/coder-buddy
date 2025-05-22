@@ -9,9 +9,9 @@ BASE_URL = "https://3001-firebase-coder-buddy-1746985578257.cluster-qhrn7lb3szcf
 def _Write(text: str):
     st.write(text)
 
-def _ChatMessage(role: Literal["user", "assistant"], message: str, key: Any = 1):
+def _ChatMessage(role: Literal["user", "assistant"], message: str, key):
     if role == "user":
-        _MessagePlaceholder(key=f"message-placeholder-{key}", message=message)
+        _MessagePlaceholder(key=str(key), message=message)
     else:
         st.markdown(message)
 
@@ -26,7 +26,10 @@ def _Unstyled():
     """
 
     st.markdown(
-        """<style>header.stAppHeader { display: none !important; }</style>""",
+        """<style>
+            .stAppHeader { display: none !important; }
+            .stMainBlockContainer { padding: 0px !important; } 
+        </style>""",
         unsafe_allow_html=True
     )
 
