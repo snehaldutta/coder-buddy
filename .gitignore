@@ -1,0 +1,9 @@
+# Python
+.venv/
+**/__pycache__/
+
+# Node
+**/node_modules/
+
+# Misc
+.DS_Store

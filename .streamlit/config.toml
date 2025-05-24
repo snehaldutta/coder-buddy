@@ -1,0 +1,20 @@
+[server]
+port = 8501
+enableCORS = false
+enableXsrfProtection = false
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[ui]
+hideTopBar = true
+
+[client]
+showErrorDetails = "full"
+toolbarMode = "minimal"
+showSidebarNavigation = false
+
+[theme]
+font = "Inter, sans-serif"
+base = "dark"
